@@ -1,15 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import NavBar from './Components/NavBar'
+import ItemListContainer from './Components/ItemListContainer'
 import './App.css'
-import NavBar from './components/NavBar'
 
 function App() {
- 
+  
 
   return (
     <>
-      <NavBar />
+    <NavBar></NavBar>
+    <h1>Hola Mundo</h1>
+    <ItemListContainer saludo="Bienvenidos a la tienda"></ItemListContainer>
     </>
   )
 }

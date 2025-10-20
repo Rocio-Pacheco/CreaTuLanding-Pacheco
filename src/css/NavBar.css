@@ -1,4 +1,4 @@
-.nav-container {
+/* .nav-container {
   background: #222;
   padding: 1rem;
 }
@@ -8,8 +8,42 @@
   text-decoration: none;
 }
 .logo {
-  height: 4em;
-  padding: 1.5em;
+  height: 7em;
+  padding: 0.5em 1em;
   will-change: filter;
   transition: filter 300ms;
+} */
+.navbar {
+  background: #222 !important;
+  padding: 1rem;
+  border-bottom: 2px solid #444;
+}
+
+.navbar-brand .logo {
+  height: 3em;
+  padding: 0.5em 1em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.nav-link {
+  color: #fff !important;
+  margin-right: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1em;
+}
+
+.nav-link:hover {
+  color: #ffd700 !important; 
+  text-decoration: underline;
+}
+
+.me-auto {
+  display: flex;
+  gap: 1rem;
+}
+
+.cartwidget {
+  margin-left: 1.5rem;
 }
