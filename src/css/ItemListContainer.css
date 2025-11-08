@@ -1,0 +1,14 @@
+.item-list-container {
+  background: #23272b;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  color: #fff;
+  margin: 2rem auto;
+  max-width: 600px;
+}
+.item-list-container h2 {
+  margin-bottom: 1.5rem;
+  font-size: 2em;
+  color: #ffd700;
+}
