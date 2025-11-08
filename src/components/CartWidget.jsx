@@ -1,6 +1,10 @@
 import "../css/CartWidget.css";
 
+<<<<<<< HEAD
 const Cartwidget = () => {
+=======
+const CartWidget = () => {
+>>>>>>> 14ae24c (agregar promesa)
     return (
         <div className="cart-widget">
             <span>🛒</span>
@@ -8,4 +12,8 @@ const Cartwidget = () => {
          </div>
     );
 }       
+<<<<<<< HEAD
 export default Cartwidget;
+=======
+export default CartWidget;
+>>>>>>> 14ae24c (agregar promesa)
