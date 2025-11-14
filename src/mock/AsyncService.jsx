@@ -1,50 +1,48 @@
-// Mock simple: devuelve productos tras un retardo
+// Productos que se mostraran
 const productos = [
   { id: '1', 
-    nombre: 'Teclado', 
+    nombre: 'Teclado Gamer Razer Huntsman V3 Pro Tkl Us', 
     categoria: 'perifericos', 
     precio: 100, 
     stock: 10,
-    img:'../../public/img/teclado.jpg' 
+    img:'https://i.postimg.cc/J7KJhGhP/Teclado-Gamer-Razer-Huntsman-V3-Pro-Tkl-Us.jpg' 
   },
   { 
     id: '3', 
-    nombre: 'Procesador', 
+    nombre: 'Procesador Intel Core Ultra 5 225', 
     categoria: 'componentes', 
     precio: 300, 
     stock: 5,
-    img:'../../public/img/procesador.jpg'
+    img:'https://i.postimg.cc/TPXvF2nn/procesador.jpg'
   },
   { 
     id: '4', 
-    nombre: 'Monitor', 
+    nombre: 'Monitor AORUS FO27Q2', 
     categoria: 'perifericos', 
     precio: 500, 
     stock: 8,
-    img:'../../public/img/monitor.jpg'
+   img:'https://i.postimg.cc/9Qkr793d/monitor.jpg'
   },
   { 
     id: '5', 
-    nombre: 'Motherboard', 
+    nombre: 'Z790 PROJECT ZERO', 
     categoria: 'componentes', 
     precio: 250, 
     stock: 6,
-    img:'../../public/img/motherboard.jpg'
+    img:'https://i.postimg.cc/ncgJKGz0/motherboard.jpg'
   },
 ];
-
 export const getProductos = () => {
-  let error = false; // cambiar a true para probar error
 
-// Devuelve una Promise que se resolverá o rechazará después de un retardo
+  let error = false;  // ponelo en true para probar el catch
+
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (error){
-         reject('Ups, algo salio mal')// rechaza si hay error
-       }else{
-       
-        resolve(productos); // resuelve con la lista de productos
-       } 
-    }, 2000); // retardo simulado (ms)
+      if (error) {
+        reject("Ups, algo salió mal");
+      } else {
+        resolve(productos); // ahora sí existe la constante
+      }
+    }, 2000);
   });
 };

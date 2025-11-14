@@ -12,7 +12,7 @@ function App() {
     <>
     <NavBar></NavBar>
     <h1>Hola Mundo</h1>
-    <ItemListContainer saludo="Bienvenidos a la tienda"></ItemListContainer>
+    <ItemListContainer></ItemListContainer>
     <ItemCount stock={10}></ItemCount>
     </>
   )

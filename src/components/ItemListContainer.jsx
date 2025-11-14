@@ -1,23 +1,26 @@
 import "../css/ItemListContainer.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getProductos } from "../mock/AsyncService";
+import ItemList from "./ItemList";
 
 const ItemListContainer = (props) => {
-    const[data,setData]= useState ([])
+
+  const [data, setData] = useState([]);
+
   useEffect(() => {
-    // Llama al servicio mock y maneja la respuesta / error
+    console.log("componente montado");
     getProductos()
-      .then((res) => console.log(res, "respuesta"))
+      .then((res) => setData(res))
       .catch((error) => console.log(error));
   }, []);
 
-console.log(data,'estadpo de productos')
-
+  console.log(data, "estado de productos");
+//Mostrar productos
   return (
     <div className="item-list-container">
-      <h1 classname="text-success">{props.saludo}</h1>
-      {data.map((prod) => 
-        <p>{prod.id}</p>)}
+      <h1 className="text-success">{props.saludo}</h1>
+     
+      <ItemList data={data}/>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import '../css/NavBar.css'
-import logo from '../../public/img/logo.png'
+import logo from '../assets/img/logo.png'
 import CartWidget from './CartWidget'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 
