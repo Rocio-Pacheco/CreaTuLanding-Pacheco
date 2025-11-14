@@ -1,19 +1,13 @@
 import "../css/CartWidget.css";
 
-<<<<<<< HEAD
-const Cartwidget = () => {
-=======
+// Componente que muestra el icono del carrito y la cantidad
 const CartWidget = () => {
->>>>>>> 14ae24c (agregar promesa)
-    return (
-        <div className="cart-widget">
-            <span>🛒</span>
-            <span>5</span>
-         </div>
-    );
-}       
-<<<<<<< HEAD
-export default Cartwidget;
-=======
+  return (
+    <div className="cart-widget">
+      <span>🛒</span>
+      <span>5</span>
+    </div>
+  );
+};
+
 export default CartWidget;
->>>>>>> 14ae24c (agregar promesa)
