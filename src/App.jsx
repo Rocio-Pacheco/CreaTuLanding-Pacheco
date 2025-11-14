@@ -13,7 +13,7 @@ function App() {
     <NavBar></NavBar>
     <h1>Hola Mundo</h1>
     <ItemListContainer></ItemListContainer>
-    <ItemCount stock={10}></ItemCount>
+   { /*<ItemCount stock={10}></ItemCount>*/}
     </>
   )
 }
