@@ -8,13 +8,13 @@ const ItemListContainer = (props) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log("componente montado");
+    console.log("Ejecutando");
     getProductos()
       .then((res) => setData(res))
       .catch((error) => console.log(error));
   }, []);
 
-  console.log(data, "estado de productos");
+  console.log(data, "Mostrar Arrays de productos");
 //Mostrar productos
   return (
     <div className="item-list-container">
