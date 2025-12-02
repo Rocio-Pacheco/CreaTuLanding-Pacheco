@@ -1,22 +1,27 @@
-import React from 'react'
-import { Card, Button } from 'react-bootstrap';
+import React from 'react';
+import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import '../css/Item.css';
 
-const Item = ({prod}) => {
-  console.log('item', prod.id);
+const Item = ({ prod }) => {
   return (
-       <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={prod.img} />
-      <Card.Body>
-        <Card.Title>{prod.nombre}</Card.Title>
-        <Card.Text>
-          ${prod.precio},00
-        </Card.Text>
-     
-        <Link className='btn btn-dark' to={'/item/'+prod.id}>Ver Mas</Link>
-      </Card.Body>
-    </Card>
-  )
-}
+    <Link className="item-link" to={`/item/${prod.id}`}>
+      <Card className="item-card">
+        <Card.Img
+          className="card-img"
+          variant="top"
+          src={prod.img}
+          alt={prod.nombre}
+        />
+        <Card.Body>
+          <Card.Title>{prod.nombre}</Card.Title>
+          <Card.Text>
+            ${prod.precio},00
+          </Card.Text>
+        </Card.Body>
+      </Card>
+    </Link>
+  );
+};
 
-export default Item
+export default Item;
