@@ -1,10 +1,15 @@
 import React from 'react'
-import Item from './Item'
+import ItemCount from './ItemCount'
 
 const ItemDetail = ({detalle}) => {
   return (
-    <div>
-        {data.map((detail) => <Item key={detail.id} detail={detail}/>)}     
+    <div style={{display:'flex', justifyContent:'center', flexDirection:'column', alignItems:'center', flexWrap:'wrap'}}>
+        <h1>Detalle de: {detalle.nombre}</h1>
+        <img src={detalle.img} alt={detalle.nombre}/>
+        <p>{detalle.descripcion}</p>
+        <p>${detalle.precio},00</p>
+        <p>STOCK DISPONIBLE: {detalle.stock}</p>
+        <ItemCount stock={detalle.stock}/>
     </div>
   )
 }
