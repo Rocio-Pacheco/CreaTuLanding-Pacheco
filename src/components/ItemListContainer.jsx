@@ -24,7 +24,7 @@ const ItemListContainer = (props) => {
 //Mostrar productos
   return (
     <div className="item-list-container">
-      <h1 className="text-success">{props.saludo}{type && <span>{type}</span>}</h1>
+      <h1 className="text-success">{props.saludo} {type && <span>{type}</span>}</h1>
      
       <ItemList data={data}/>
     </div>
