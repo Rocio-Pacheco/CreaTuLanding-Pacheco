@@ -18,7 +18,7 @@ function NavBarBS() {
             <Nav.Link as={NavLink} to="/categoria/armado">Armados</Nav.Link>
             <Nav.Link as={NavLink} to="/categoria/perifericos">Periféricos</Nav.Link>
           </Nav>
-          <CartWidget />
+          <CartWidget/>
         </Navbar.Collapse>
       </Container>
     </Navbar>

@@ -9,9 +9,9 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     // Llamar la promise
-    getOneProduct(id)
-      .then((res) => setDetalle(res))
-      .catch((error) => console.log(error))
+  getOneProduct(id)
+    .then((res) => setDetalle(res))
+    .catch((error) => console.log(error))
   }, [id])
 
   return (
