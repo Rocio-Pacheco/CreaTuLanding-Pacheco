@@ -1,16 +1,92 @@
-# React + Vite
+🛒 **TechStore -- Tienda de Componentes y PCs (React)**
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación desarrollada como **Proyecto Final del curso de React
+(CoderHouse)**.\
+TechStore es una tienda online donde el usuario puede explorar y
+comprar:
 
-Currently, two official plugins are available:
+-   🧩 Componentes sueltos\
+-   🖥️ PCs pre-armadas\
+-   🎧 Periféricos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Incluye detalle de productos, carrito de compras, integración con base
+de datos y navegación dinámica.
 
-## React Compiler
+------------------------------------------------------------------------
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🚀 **Tecnologías utilizadas**
 
-## Expanding the ESLint configuration
+-   **React JS**\
+-   **Vite / Create React App**\
+-   **React Router DOM**\
+-   **Firebase / MockAPI / JSON local**\
+-   **Context API / useState / useEffect**\
+-   **Bootstrap / Tailwind / CSS Modules**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+------------------------------------------------------------------------
+
+📦 **Instalación**
+
+bash
+git clone https://github.com/tuUsuario/ProyectoFinal+Apellido.git
+cd ProyectoFinal+Apellido
+npm install
+npm run dev
+
+
+------------------------------------------------------------------------
+
+🛍️ **Características principales**
+
+✔️ Catálogo dinámico
+
+-   Componentes\
+-   PCs armadas\
+-   Periféricos
+
+✔️ Vista de detalle del producto
+
+Incluye imagen, descripción, precio y botón de agregar al carrito.
+
+✔️ Carrito de compras
+
+-   Agregar / eliminar productos
+-   Total dinámico\
+-   Persistencia en LocalStorage
+
+✔️ Navegación con React Router
+
+Rutas: `/`, `/categoria/:id`, `/item/:id`, `/carrito`, `/checkout`
+
+✔️ Backend
+
+Base de datos remota Firebase / MockAPI.
+
+------------------------------------------------------------------------
+
+📁 **Estructura del proyecto**
+
+    src/
+    ├── components/
+    ├── pages/
+    ├── context/
+    ├── data/
+    ├── services/
+    ├── App.jsx
+    └── main.jsx
+
+------------------------------------------------------------------------
+
+📸 **Capturas**
+
+[HOME](https://postimg.cc/yDb7k5Ps)
+[PERIFERICOS](https://i.postimg.cc/YSYcgvCH/perifericos.png)
+[DETALLES](https://i.postimg.cc/Mpfg2nRF/detalles.png)
+[CARRITO](https://i.postimg.cc/ncFHJGcG/carrito.png)
+
+------------------------------------------------------------------------
+
+👩‍💻 **Desarrollado por**
+
+Rocío Pacheco
+Proyecto Final -- React JS -- CoderHouse
