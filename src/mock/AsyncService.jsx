@@ -1,23 +1,23 @@
 // Productos que se mostraran
 const productos = [
-  { 
-    id: '1', 
-    nombre: 'Teclado Gamer Razer Huntsman V3 Pro Tkl Us', 
-    categoria: 'perifericos', 
-    precio: 100, 
-    stock: 10,
-    img: 'https://i.postimg.cc/J7KJhGhP/Teclado-Gamer-Razer-Huntsman-V3-Pro-Tkl-Us.jpg',
-    descripcion: 'Teclado mecánico gamer TKL con switches ópticos de alta precisión, ideal para esports.'
-  },
- {
-    id: '2',
-    nombre: 'PC Gamer Armada - Ryzen 7 9900X / RTX 5080',
-    categoria: 'armado',
-    precio: 3200,
-    stock: 2,
-    img: 'https://i.postimg.cc/cJvyvDw9/PC-Armado.png',
-    descripcion: 'Ryzen 7 9900X, RTX 5080, 32GB x2 7000MHz — PC lista para alto rendimiento en gaming y creación de contenido.',
-  },
+//   { 
+//     //id: '1', el id es dinamico en firebase
+//     nombre: 'Teclado Gamer Razer Huntsman V3 Pro Tkl Us', 
+//     categoria: 'perifericos', 
+//     precio: 100, 
+//     stock: 10,
+//     img: 'https://i.postimg.cc/J7KJhGhP/Teclado-Gamer-Razer-Huntsman-V3-Pro-Tkl-Us.jpg',
+//     descripcion: 'Teclado mecánico gamer TKL con switches ópticos de alta precisión, ideal para esports.'
+//   },
+//  {
+//     //id: '2',
+//     nombre: 'PC Gamer Armada - Ryzen 7 9900X / RTX 5080',
+//     categoria: 'armado',
+//     precio: 3200,
+//     stock: 2,
+//     img: 'https://i.postimg.cc/cJvyvDw9/PC-Armado.png',
+//     descripcion: 'Ryzen 7 9900X, RTX 5080, 32GB x2 7000MHz — PC lista para alto rendimiento en gaming y creación de contenido.',
+//   },
 
   { 
     id: '3', 
