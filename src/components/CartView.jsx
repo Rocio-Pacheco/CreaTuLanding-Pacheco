@@ -22,7 +22,13 @@ const CartView = () => {
                 ))
             }
           </div>
+          {/* crear una funcion que devuelva el total a pagar */}
+        <span>Total a pagar</span>
+        <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', width:'80%', padding:'2rem'}}>
+            <button className='btn btn-danger' onClick={clear}>Vaciar carrito</button>
+            <button className='btn btn-success'>Terminar compra</button>
         </div>
+      </div>
   )
 }
 
