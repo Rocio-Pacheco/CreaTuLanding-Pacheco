@@ -12,7 +12,7 @@ const CartWidget = () => {
   return (
     <>
       <FaShoppingCart fontSize={'1.3rem'} />
-      <Badge pill bg="danger">5</Badge>
+      <Badge pill bg="danger"></Badge>
     </>
   );
 };
