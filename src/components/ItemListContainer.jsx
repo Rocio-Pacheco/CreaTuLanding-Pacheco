@@ -41,9 +41,14 @@ const ItemListContainer = (props) => {
   }, []);
 
 
+
+
+
+
 //Mostrar productos
   return (
     <>
+    
       {loader 
         ? <LoaderComponent/>
           : <div className="item-list-container">

@@ -7,58 +7,88 @@ import EmptyCart from './EmptyCart'
 import { useForm } from 'react-hook-form'
 
 const Checkout = () => {
-  const[buyer, setBuyer] =useState({})
-  const [secondMail, setSecondMail] = useState ('')
-  const {cart, total} = useContext (CartContext)
-  const [orderId, setOrderId] = useState (null)
-  
-  const buyerData = (e) =>{
-    setBuyer({
-      ...buyer,
-      [e.target.name]: e.target.value
-    })
-  }
-  const finalizarCompra = (e) =>{
-    e.preventDefault()
+    const [loading, setLoading] = useState(false)
+    const [orderId, setOrderId] = useState(null)
+    const [error, setError] = useState("")   // <-- AGREGADO
+    const { cart, total, clear } = useContext(CartContext)
+    const { register, handleSubmit, formState:{ errors }, getValues } = useForm()
 
-    let order = {
-      comprador: buyer,
-      compras:cart,
-      total:total(),
-      fecha: serverTimestamp()
-  }
+    console.log(errors, "errors")
 
-  const ventas = collection (db, "orders")
-     
-    addDoc(ventas, order)
-         .then((res)=>{
-            setOrderId(res.id)
-             clear()
-         })
-         .catch((error)=> console.log(error))
-         .finally(()=> setLoading(false))
-        
+    const finalizarCompra = (dataForm) => {
+        setLoading(true)
+        setError("")    // limpiar error previo
+
+        try {
+            let order = {
+                comprador: {
+                    name: dataForm.name,
+                    lastname: dataForm.lastname,
+                    address: dataForm.address,
+                    email: dataForm.email
+                },
+                compras: cart,
+                total: total(),
+                fecha: serverTimestamp()
+            }
+
+            const ventas = collection(db, "orders")
+
+            addDoc(ventas, order)
+                .then((res) => {
+                    setOrderId(res.id)
+                    clear()
+                })
+                .catch(() => {
+                    setError("Hubo un error procesando la compra. Intente nuevamente.")
+                })
+                .finally(() => setLoading(false))
+
+        } catch (err) {
+            setError("Error inesperado. Reintente.")
+            setLoading(false)
+        }
     }
 
-  return (
-    <>
-    { orderId ? (
-        <div>
-            <h1>Gracias por su compra!</h1>
-            <h2>Su numero de orden es: {orderId}</h2>
-            <Link className='btn btn-dark' to='/'>Volver al inicio</Link>
-          </div>
-        ) :
-      <div>
-        <h1>Complete con sus datos</h1>
-        <form className='p-4 border rounded shadow-sm bg-light' onSubmit={finalizarCompra}>
-              <input className='form-control' name='name' type='text' placeholder='Ingresa tu nombre'onChange={buyerData}/>
-              <input className='form-control' name='lastname' type='text' placeholder='Ingresa tu apellido' onChange={buyerData}/>
-              <input className='form-control' name='address' type='text' placeholder='Ingresa su direccion' onChange={buyerData}/>
-              <input className='form-control' name='mail' type='email' placeholder='Ingresa tu correo' onChange={buyerData}/>
-              <input className='form-control' name='secondmail' type='email' placeholder='Repetí tu correo' onChange={(e)=>setSecondMail(e.target.value) }/>
-              <button type='submit' className='btn btn-success'>Completar Compra</button>
-          </form>
+    if (!cart.length && !orderId) {
+        return <EmptyCart />
+    }
+
+    return (
+        <>
+            {orderId ? (
+                <div>
+                    <h1>Gracias por su compra!</h1>
+                    <h2>Su número de orden es: <strong>{orderId}</strong></h2>
+                    <Link className='btn btn-dark' to='/'>Volver al inicio</Link>
+                </div>
+            ) : 
+                <div>
+                    <h1>Complete con sus datos</h1>
+
+                    {error && (
+                        <span style={{color:'red', fontWeight:'bold'}}>
+                            {error}
+                        </span>
+                    )}
+         <form className='p-4 border rounded shadow-sm bg-light' onSubmit={handleSubmit(finalizarCompra)}>
+            <input className='form-control' name='name' type='text' placeholder='Ingresa tu nombre' {...register("name", {required:true, minLength:3})}/>
+            {errors?.name?.type === "required" && <span style={{color:'red', fontWeight:'bold'}}>El nombre es requerido</span>}
+            {errors?.name?.type === "minLength" && <span style={{color:'red', fontWeight:'bold'}}>El nombre debe contener minimamente 3 caracteres</span>}
+            <input className='form-control' name='lastname' type='text' placeholder='Ingresa tu apellido' {...register("lastname", {required:true, minLength:2})}/>
+            {errors?.lastname?.type === "required" && <span style={{color:'red', fontWeight:'bold'}}>El apellido es requerido</span>}
+            {errors?.lastname?.type === "minLength" && <span style={{color:'red', fontWeight:'bold'}}>El apellido debe contener minimo 2 caracteres</span>}
+            <input className='form-control' name='address' type='text' placeholder='Ingresa su direccion' {...register("address", {required:true, minLength:9, maxLength:30})}/>
+              {errors?.address?.type === "required" && <span style={{color:'red', fontWeight:'bold'}}>La dirección  es un campo requerido</span>}
+            {errors?.address?.type === "minLength" && <span style={{color:'red', fontWeight:'bold'}}>La dirección debe contener minimo 9 caracteres</span>}
+             {errors?.address?.type === "maxLength" && <span style={{color:'red', fontWeight:'bold'}}>La dirección es demasiado larga</span>}
+            <input className='form-control' name='mail' type='email' placeholder='Ingresa tu correo' {...register("email", {required:true})} />
+             {errors?.email?.type === "required" && <span style={{color:'red', fontWeight:'bold'}}>Por favor complete el campo mail</span>}
+            <input className='form-control' name='secondmail' type='email' placeholder='Repetí tu correo' {...register("secondemail", {required:true, validate:{equalsMails: mail2=> mail2 === getValues().email}})} />
+            {errors?.secondemail?.type === "required" && <span style={{color:'red', fontWeight:'bold'}}>Por favor complete el campo</span>}
+              {errors?.secondemail?.type === "equalsMails" && <span style={{color:'red', fontWeight:'bold'}}>Los correos no coinciden</span>}
+            <button type='submit' className='btn btn-success' disabled={loading}>{loading ? 'Procesando compra...' : 'Completar Compra'}</button>
+        </form>
       </div>
       }
     </>

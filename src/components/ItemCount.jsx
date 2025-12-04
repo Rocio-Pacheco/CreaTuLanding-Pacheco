@@ -22,13 +22,18 @@ import React from 'react'
   
   console.log('ItemCount')
     return (
-      <>
+      <> {
+        stock > 0 
+        ? <>
       <div>
         <button className='btn btn-danger' onClick={restar} disabled ={count === 0}>-</button>
         <span className='btn'>{count}</span>
         <button className='btn btn-success' onClick={sumar} disabled ={count === stock}>+</button>
       </div>
       <button className='btn btn-primary mt-2' onClick={ejecutarCompra} disabled ={count === 0}>Comprar</button>
+      </>
+      : <p>No hay stock disponible por el momento</p>
+      }
       </>
     )
 

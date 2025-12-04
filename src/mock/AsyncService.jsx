@@ -20,7 +20,7 @@ const productos = [
 //   },
 
   { 
-    id: '3', 
+    // id: '3', 
     nombre: 'Procesador Intel Core Ultra 5 225', 
     categoria: 'componentes', 
     precio: 300, 
@@ -30,7 +30,7 @@ const productos = [
   },
 
   { 
-    id: '4', 
+    // id: '4', 
     nombre: 'Monitor AORUS FO27Q2', 
     categoria: 'perifericos', 
     precio: 500, 
@@ -40,7 +40,7 @@ const productos = [
   },
 
   { 
-    id: '5', 
+    // id: '5', 
     nombre: 'Z790 PROJECT ZERO', 
     categoria: 'componentes', 
     precio: 250, 
