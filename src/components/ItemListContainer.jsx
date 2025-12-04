@@ -4,6 +4,8 @@ import { useParams } from "react-router-dom";
 import { getProductos } from "../mock/AsyncService";
 import ItemList from "./ItemList";
 import LoaderComponent from "./LoaderComponent";
+import { collection, getDocs, query, where, addDoc } from "firebase/firestore";
+import {db} from "../service/firebase";
 
 const ItemListContainer = (props) => {
 
@@ -11,19 +13,32 @@ const ItemListContainer = (props) => {
   const [loader,setLoader] = useState(false);
   const {type} = useParams();
 
+
+  //FIREBASE
   useEffect(() => {
-    setLoader(true);
-    getProductos()  
-      .then((res) =>{
-        if (type) { // Filtrar por categoria
-          setData(res.filter((prod) => prod.categoria === type));
-        } else {
-        setData(res);
-      }
+    setLoader(true)
+    //conectwar a firebase
+    const productCollection= type 
+    //traer los productos que coinciden con la categoria
+    ? query(collection(db, "productos"), where("categoria", "==", type))
+    //agarra los productos de la coleccion
+    :collection(db, "productos");
+    //pide los documentos
+    getDocs(productCollection)
+    .then((res)=>{
+      //obtener id y data
+      const list = res.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data()
+        }
+      })
+
+      setData(list)
     })
     .catch((error) => console.log(error))
-    .finally(() => setLoader(false)); // ahora sí encadenado
-}, [type]);
+    .finally(() => setLoader(false));
+  }, []);
 
 
 //Mostrar productos
