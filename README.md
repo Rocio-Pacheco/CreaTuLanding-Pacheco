@@ -79,11 +79,10 @@ Base de datos remota Firebase / MockAPI.
 
 📸 **Capturas**
 
-[HOME](https://postimg.cc/yDb7k5Ps)
-[PERIFERICOS](https://i.postimg.cc/YSYcgvCH/perifericos.png)
-[DETALLES](https://i.postimg.cc/Mpfg2nRF/detalles.png)
-[CARRITO](https://i.postimg.cc/ncFHJGcG/carrito.png)
-
+![Home](./public/img/home.png)
+![Perifericos](./public/img/perifericos.png)
+![Detalles](./public/img/detalles.png)
+![Carrito](./public/img/carrito.png)
 ------------------------------------------------------------------------
 
 👩‍💻 **Desarrollado por**
