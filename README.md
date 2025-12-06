@@ -60,21 +60,7 @@ Rutas: `/`, `/categoria/:id`, `/item/:id`, `/carrito`, `/checkout`
 
 ✔️ Backend
 
-Base de datos remota Firebase / MockAPI.
-
-------------------------------------------------------------------------
-
-📁 **Estructura del proyecto**
-
-    src/
-    ├── components/
-    ├── pages/
-    ├── context/
-    ├── data/
-    ├── services/
-    ├── App.jsx
-    └── main.jsx
-
+Base de datos remota firebase y mockAPI
 ------------------------------------------------------------------------
 
 📸 **Capturas**
