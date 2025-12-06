@@ -4,7 +4,7 @@ import CartWidget from './CartWidget'
 import { Container, Nav, Navbar } from 'react-bootstrap'
 import { NavLink } from 'react-router-dom'
 
-function NavBarBS() {
+function NavBar() {
   return (
     <Navbar bg="dark" variant="dark" expand="lg">
       <Container>
@@ -25,4 +25,4 @@ function NavBarBS() {
   );
 }
 
-export default NavBarBS;
+export default NavBar;
