@@ -11,7 +11,7 @@ const CartContainer = () => {
       /* Si el carrito esta vacio, mostrar componente carrito vacio, sino mostrar vista del carrito */
       !cart.length
       ? <EmptyCart/>
-      : <Cartview/>
+      : <CartView/>
     }
 
     </>
