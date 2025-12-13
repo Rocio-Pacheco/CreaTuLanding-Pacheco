@@ -1,13 +1,13 @@
-import NavBar from './Components/NavBar'
-import ItemListContainer from './Components/ItemListContainer'
-import ItemDetailContainer from './Components/ItemDetailContainer'
+import NavBar from "./components/NavBar.jsx";
+import ItemListContainer from './components/ItemListContainer.jsx'
+import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Error from './Components/Error';
+import Error from './components/Error.jsx';
 import { CartProvider } from './context/CartContext';
-import CartContainer from './Components/CartContainer';
-import Checkout from './Components/Checkout';
+import CartContainer from './components/CartContainer.jsx';
+import Checkout from './components/Checkout';
 
 function App() {
 

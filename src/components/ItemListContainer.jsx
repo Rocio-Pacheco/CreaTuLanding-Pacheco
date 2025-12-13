@@ -38,11 +38,7 @@ const ItemListContainer = (props) => {
     })
     .catch((error) => console.log(error))
     .finally(() => setLoader(false));
-  }, []);
-
-
-
-
+  }, [type]);
 
 
 //Mostrar productos

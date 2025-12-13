@@ -6,8 +6,7 @@ export const CartContext = createContext()
 const carritoLS = JSON.parse(localStorage.getItem('carrito')) || []
 //crear proovedor
 export const CartProvider = ({children})=>{
-    
-    const [cart, setCart] = useState([carritoLS])
+    const [cart, setCart] = useState(carritoLS)
     
     useEffect(()=>{
         localStorage.setItem('carrito', JSON.stringify(cart))
